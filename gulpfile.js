@@ -1,28 +1,25 @@
-const { src, dest, watch, series, parallel } = require('gulp'),
-      fs = require('fs'),
-      plumber = require('gulp-plumber'),
-      notify = require('gulp-notify'),
-      browserSync = require('browser-sync').create(),
-      rename = require('gulp-rename'),
-      del = require('del'),
-      pug = require('gulp-pug'),
-      htmlmin = require('gulp-htmlmin'),
-      sassGlob = require('gulp-sass-glob'),
-      sass = require('gulp-sass')(require('sass')),
-      less = require('gulp-less'),
-      stylus = require('gulp-stylus'),
-      csso = require('gulp-csso'),
-      autoprefixer = require('gulp-autoprefixer'),
-      uglify = require('gulp-uglify-es').default,
-      fonter = require('gulp-fonter'),
-      ttf2woff2 = require('gulp-ttf2woff2'),
-      changed = require('gulp-changed'),
-      imagemin = require('gulp-imagemin'),
-      webp = require('gulp-webp'),
-      avif = require('gulp-avif'),
-      avifWebpHTML = require("gulp-avif-webp-html");
-
-global.app = {}
+const { src, dest, watch, series, parallel } = require('gulp');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
+const del = require('del');
+const pug = require('gulp-pug');
+const htmlmin = require('gulp-htmlmin');
+const sassGlob = require('gulp-sass-glob');
+const sass = require('gulp-sass')(require('sass'));
+const less = require('gulp-less')(require('less'));
+const stylus = require('gulp-stylus')(require('stylus'));
+const csso = require('gulp-csso');
+const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify-es').default;
+const fonter = require('gulp-fonter');
+const ttf2woff2 = require('gulp-ttf2woff2');
+const changed = require('gulp-changed');
+const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
+const avif = require('gulp-avif');
+const avifWebpHTML = require("gulp-avif-webp-html");
 
 function watching() {
   browserSync.init({
